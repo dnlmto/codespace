@@ -1,14 +1,14 @@
-#!/bin/bash
-
-for (( a = 1; a < 10; a++ ))
-do
-    echo "outer loop: $a"
-    for (( b = 1; b < 100; b++ ))
-    do
-        if [[ $b -gt 5 ]] 
-        then
-            break 2
-        fi
-    echo "Inner loop: $b "
-    done
-done
+#######################################
+# Description: Hello function
+# Globals:
+#   None
+# Arguments:
+#   Single input argument
+# Outputs:
+#   Value of input argument
+# Returns:
+#   0 if successful, non-zero on error.
+#######################################
+function hello() {
+    echo "Hello $1!"
+}
