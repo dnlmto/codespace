@@ -1,23 +1,14 @@
 #!/bin/bash
 
-read -p "Enter the name of your car brand: " car
-
-case $car in
-
-  Tesla)
-    echo -n "${car}'s car factory is in the USA."
-    ;;
-
-  BMW | Mercedes | Audi | Porsche)
-    echo -n "${car}'s car factory is in Germany."
-    ;;
-
-  Toyota | Mazda | Mitsubishi | Subaru)
-    echo -n "${car}'s car factory is in Japan."
-    ;;
-
-  *)
-    echo -n "${car} is an unknown car brand"
-    ;;
-
-esac
+for (( a = 1; a < 10; a++ ))
+do
+    echo "outer loop: $a"
+    for (( b = 1; b < 100; b++ ))
+    do
+        if [[ $b -gt 5 ]] 
+        then
+            break 2
+        fi
+    echo "Inner loop: $b "
+    done
+done
